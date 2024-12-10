@@ -14,8 +14,12 @@
 
 <h2 *ngIf="age > 18">Tren 18</h2>
 
-
+<!-- () Đưa từ HTML vào code, [] Lấy từ code ra HTML -->
 <!-- Event Binding -->
- <input type="text" [(ngModel)]="yourName" placeholder="Enter your name" />
- <h3 id="h3-yourName">Hello {{yourName}}</h3>
- <button (click)="resetname()"> Click Here</button>
+
+<div class="EventBinding" >
+    <h1>Event Binding</h1>
+    <input type="text" [(ngModel)]="yourName" placeholder="Enter your name" />
+    <h3 id="h3-yourName">Hello {{yourName}}</h3>
+    <button (click)="resetname()"> Click Here</button>
+</div>
