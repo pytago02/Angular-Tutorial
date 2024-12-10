@@ -6,6 +6,7 @@
 <input type="text" name="" id="" [value]="name" title="This is your Name {{name}}">
 <br>
 <input type="text" name="" id="" [value]="name" [title]="'This is your name: '   + name">
+
 @if(age > 18){
     <h2>You very OLD !!!</h2>
 }@else {
@@ -13,6 +14,7 @@
 }
 
 <h2 *ngIf="age > 18">Tren 18</h2>
+<h2 *ngIf="age < 18">Em chua 18</h2>
 
 <!-- () Đưa từ HTML vào code, [] Lấy từ code ra HTML -->
 <!-- Event Binding -->
@@ -34,3 +36,20 @@
 
     FormsModule được thêm vào imports trong @Component để hỗ trợ [(ngModel)].
     -->
+
+    <!-- Ng-Template -->
+     <div class="ngTemplate">
+        <input type="text" name="" id="" [(ngModel)]="age">
+
+        <div *ngIf="age>18; then gia; else tre"></div>
+       <ng-template #tre >
+         <h2>Còn trẻ lắm !!!</h2>
+       </ng-template>
+
+       <ng-template #gia>
+        <h2>Quá già rồi !!!</h2>
+      </ng-template>
+     </div>
+
+
+     
