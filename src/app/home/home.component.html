@@ -23,3 +23,14 @@
     <h3 id="h3-yourName">Hello {{yourName}}</h3>
     <button (click)="resetname()"> Click Here</button>
 </div>
+    <!-- [(ngModel)]:
+
+    Liên kết dữ liệu hai chiều giữa yourName và input.
+    Khi nhập vào input, giá trị yourName sẽ tự động cập nhật và hiển thị trong h3.
+    Hàm resetname():
+
+    Khi bấm nút, hàm resetname() sẽ được gọi, đặt yourName về chuỗi rỗng ('').
+    Thêm FormsModule:
+
+    FormsModule được thêm vào imports trong @Component để hỗ trợ [(ngModel)].
+    -->
