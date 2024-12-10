@@ -6,3 +6,10 @@
 <input type="text" name="" id="" [value]="name" title="This is your Name {{name}}">
 <br>
 <input type="text" name="" id="" [value]="name" [title]="'This is your name: '   + name">
+@if(age > 18){
+    <h2>You very OLD !!!</h2>
+}@else {
+    <h2>You are Young Buffalo !!!</h2>
+}
+
+<h2 *ngIf="age > 18">Tren 18</h2>
