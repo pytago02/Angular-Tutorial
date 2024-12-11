@@ -13,30 +13,71 @@ import { NewpipePipe } from '../../pipes/newpipe.pipe';
   imports:[CommonModule, FormsModule, NewpipePipe]
 })
 export class HomeComponent {
-  public name = 'Nguyen Van B';
-  public age = 90;
 
-  public yourName = 'Nguyen Van A'; 
-  public traiCay = ['cam', 'tao', 'nho'];
-  public traiCay2 = [
-    {ten: "Táo", gia: 12, haGia: false},
-    {ten: "Nho", gia: 20, haGia: false},
-    {ten: "Chuối", gia: 8, haGia: true}
+  public selectedDistricts :string[] = [];
+
+  // Hàm xử lí sự kiện khi người dùng chọn
+  public changeCity(event: any): void{
+    // tạo biến selectedCity lưu thông tin lựa chọn tỉnh
+    const selectedCity = (event.target.value);
+    // duyệt qua từng data của vietNamData tìm dữ liệu có data.tinh == selectedCity
+    const cityData = this.vietNamData.find((data) => data.tinh === selectedCity);
+    // Nếu cityData khác null ghi dữ liệu cityData.huyen vào selectedDistricts ngược lại trả về mảng rỗng vào selectedDistricts
+    this.selectedDistricts = cityData ? cityData.huyen : [];
+
+    // Gộp code 3 dòng code lại
+    this.selectedDistricts = this.vietNamData.find(data => data.tinh === selectedCity)?.huyen || [];
+  };
+
+  
+
+  public vietNamData = [
+    {
+      tinh: 'Thái Nguyên',
+      huyen:[
+        'Thành phố Thái Nguyên',
+        'Sông Công',
+        'Định Hoá',
+        'Đại Từ',
+        'Phú Lương',
+        'Phú Bình',
+        'Đồng Hỷ',
+        'Võ Nhai'
+      ],
+    },
+    {
+      tinh: 'Hà Nội',
+      huyen: [
+        'Hoàn Kiếm',
+        'Hai Bà Trưng',
+        'Đống Đa',
+        'Ba Đình',
+        'Tây Hồ',
+        'Cầu Giấy',
+        'Thanh Xuân',
+        'Hà Đông',
+        'Long Biên',
+        'Từ Liêm',
+        'Hoàng Mai',
+        'Thanh Trì',
+        'Gia Lâm',
+        'Đông Anh',
+        'Sóc Sơn',
+        'Mê Linh'
+      ],
+    },
+    {
+      tinh: 'Thái Nguyên 02',
+      huyen:[
+        'Thành phố Thái Nguyên 02',
+        'Sông Công 02',
+        'Định Hoá 02',
+        'Đại Từ 02',
+        'Phú Lương 02',
+        'Phú Bình 02',
+        'Đồng Hỷ 02',
+        'Võ Nhai 02'
+      ], 
+    }
   ];
-
-
-  public resetname() {
-    this.yourName = ''; 
-  }
-
-  public ngOnInit():void{
-    console.log('trai cay = ', this.traiCay);
-  }
-
-  public tiente: number = 54444;
-  public date: Date = new Date();
-
-  public number01: number = 123456789;
-
-
 }

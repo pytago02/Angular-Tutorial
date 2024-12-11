@@ -1,90 +1,14 @@
-<div class="main">
-    <h2>Angular Pipes - Định dạng dữ liệu</h2>
-    <div class="table">
-    <table>
-        <thead>
-        <tr>
-            <th>Tên</th>
-            <th>Sự miêu tả</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>AsyncPipe</td>
-            <td>Đọc giá trị từ a hoặc RxJS .PromiseObservable</td>
-        </tr>
-        <tr>
-            <td>CurrencyPipe</td>
-            <td>Chuyển đổi một số thành một chuỗi tiền tệ, được định dạng theo quy tắc ngôn ngữ.</td>
-        </tr>
-        <tr>
-            <td>DatePipe</td>
-            <td>Định dạng một giá trị theo quy tắc ngôn ngữ.Date</td>
-        </tr>
-        <tr>
-            <td>DecimalPipe</td>
-            <td>Chuyển đổi một số thành một chuỗi có dấu thập phân, được định dạng theo quy tắc ngôn ngữ.</td>
-        </tr>
-        <tr>
-            <td>I18nPluralPipe</td>
-            <td>Ánh xạ một giá trị với một chuỗi số nhiều giá trị theo các quy tắc ngôn ngữ.</td>
-        </tr>
-        <tr>
-            <td>I18nSelectPipe</td>
-            <td>Ánh xạ khóa đến bộ chọn tùy chỉnh trả về giá trị mong muốn.</td>
-        </tr>
-        <tr>
-            <td>JsonPipe</td>
-            <td>Chuyển đổi một đối tượng thành biểu diễn chuỗi thông qua , nhằm mục đích gỡ lỗi.JSON.stringify</td>
-        </tr>
-        <tr>
-            <td>KeyValuePipe</td>
-            <td>Chuyển đổi Object hoặc Map thành một mảng các cặp giá trị khóa.</td>
-        </tr>
-        <tr>
-            <td>LowerCasePipe</td>
-            <td>Chuyển đổi văn bản thành tất cả chữ thường.</td>
-        </tr>
-        <tr>
-            <td>PercentPipe</td>
-            <td>Chuyển đổi một số thành chuỗi phần trăm, được định dạng theo quy tắc ngôn ngữ.</td>
-        </tr>
-        <tr>
-            <td>SlicePipe</td>
-            <td>Tạo một Mảng hoặc Chuỗi mới chứa một tập hợp con (lát cắt) của các phần tử.</td>
-        </tr>
-        <tr>
-            <td>TitleCasePipe</td>
-            <td>Chuyển đổi văn bản thành chữ hoa tiêu đề(In hoa chữ cái đầu tiên của mỗi từ, còn lại viết thường).</td>
-        </tr>
-        <tr>
-            <td>UpperCasePipe</td>
-            <td>Chuyển đổi văn bản thành tất cả chữ hoa.</td>
-        </tr>
-    </tbody>
-    </table>
+<h2>Tỉnh</h2>
+<select name="" id="" (change)="changeCity($event)">
+    <option *ngFor="let data of vietNamData" [value]="data.tinh">
+        {{ data.tinh }}
+      </option>
+</select>
 
-    </div>
-
-  <div class="vidu">
-    <!-- {{value_expression | pipe_name:parameter}} -->
-    <h2>{{'{{value_expression | pipe_name:parameter}}'}}</h2>
-    <input type="text" name="" id="" [(ngModel)]="name">
-    <p>IN HOA TOÀN BỘ NỘI DUNG: {{name | uppercase}}</p>
-    <p>in thường toàn bộ nội dung: {{name | lowercase}}</p>
-
-    <input type="number" [(ngModel)]="tiente">
-    <p>Tỉ giá: {{tiente | currency:'VND'}}</p>
-
-    <input type="date" [(ngModel)]="date">
-    <p>Ngày: {{date | date:'dd/MM/yyyy'}}</p>
-
-    <input type="number" [(ngModel)]="number01">
-    <p>Số: {{number01 | number:'1.2-2'}}</p>
-
-    <p>{{name | titlecase}}</p>
-    <p>{{name | newpipe}}</p>
-
-  </div>
-
-</div>
+<h2>Huyện</h2>
+<select name="" id="">
+  <option value="" disabled selected>Chọn huyện</option>
+  <option *ngFor="let huyen of selectedDistricts">
+    {{ huyen }}
+  </option>
+</select>
