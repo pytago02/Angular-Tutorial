@@ -1,28 +1,8 @@
-<h2>Tỉnh</h2>
-<select name="" id="" (change)="changeCity($event)">
-    <option *ngFor="let data of vietNamData" [value]="data.tinh">
-        {{ data.tinh }}
-    </option>
-</select>
-
-<h2>Huyện</h2>
-<select name="" id="">
-    <option value="" disabled selected>Chọn huyện</option>
-    <option *ngFor="let huyen of selectedDistricts">
-        {{ huyen }}
-    </option>
-</select>
-
-<!-- ngSwitch -->
-<br>
-<h2>Xếp loại học lực</h2>
-
-<input type="number" min="0" max="10" [(ngModel)]="diemTrungBinh" (change)="xepLoaiHocLuc()" name="" id="">
-
-<p>Học lực: {{hocLuc}}</p>
-<div [ngSwitch]="hocLuc">
-    <div *ngSwitchCase="'gioi'">Hoc luc gioi</div>
-    <div *ngSwitchCase="'kha'">Hoc luc kha</div>
-    <div *ngSwitchCase="'trung binh'">Hoc luc trung binh</div>
-    <div *ngSwitchCase="'yeu'">Hoc luc yeu</div>
+<h2>Pick color</h2>
+<div>
+    <input type="radio" name="colors" id="" (click)="color = 'red'"> red
+    <input type="radio" name="colors" id="" (click)="color = 'green'"> green
+    <input type="radio" name="colors" id="" (click)="color = 'yellow'"> yellow
+    <input type="radio" name="colors" id="" (click)="color = 'cyan'"> cyan
 </div>
+<p style="display: inline-block;" [appHighlight]="color">Highlight me!</p>
