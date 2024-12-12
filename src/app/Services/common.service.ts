@@ -5,14 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class CommonService {
   constructor() { }
-  public counter = 1;
+  public counter = 0;
 
   public luyThua(n: number): number{
     return n*n;
   }
-
- public getData(){
-  return ['Data 1', 'Data 2'];
- }
-
 }
