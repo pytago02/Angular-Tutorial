@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HighlightDirective } from '../Directive/highlight.directive';
+import { CommonService } from '../Services/common.service';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +11,11 @@ import { HighlightDirective } from '../Directive/highlight.directive';
   styleUrls: ['./home.component.scss'],
   imports: [CommonModule, FormsModule, HighlightDirective],
 })
-export class HomeComponent {
-  public color :string = '';
+export class HomeComponent implements OnInit {
+  constructor(private common: CommonService){}
+  public counter = 0
+  public data: string[] = [];
+  ngOnInit(): void {
+    this.counter = this.common.counter;
+}
 }
