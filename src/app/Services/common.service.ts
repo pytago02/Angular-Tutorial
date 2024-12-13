@@ -10,4 +10,8 @@ export class CommonService {
   public luyThua(n: number): number{
     return n*n;
   }
+
+  public submitData(data: any): void{
+    console.log('Du lieu duoc gui: ' + data);
+  }
 }

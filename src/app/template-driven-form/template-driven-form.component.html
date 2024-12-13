@@ -1,0 +1,12 @@
+<p>template-driven-form works!</p>
+
+<form action="" (ngSubmit)="submitForm()">
+    <input type="text" 
+        [(ngModel)]="name" 
+        [ngModelOptions]="{standalone: true}">
+    <!-- Cach 1 -->
+     <!-- <button (click)="submitForm()">Submit</button> -->
+
+    <!-- cach 2  (ngSubmit)="" ở thẻ form -->
+      <button>Submit</button>
+</form>
